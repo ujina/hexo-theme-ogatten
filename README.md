@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # hexo-theme-Wikitten
 
 [中文版文档](./README_zh-CN.md)
@@ -198,3 +199,7 @@ history_control: # make you wiki has history version control in page (view sourc
 
 
 
+=======
+# hexo-theme-ogatten
+Hexoで使っているテーマの更新管理
+>>>>>>> origin/master
