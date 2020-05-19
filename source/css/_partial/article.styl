@@ -1,7 +1,7 @@
 article
-    padding: 3px
-    border-radius: 4px
-    background-color: color-border-stretch
+    padding: 0px //3px
+    border-radius: 0px //4px
+    background-color: color-background //color-border-stretch
 .article
     margin: block-margin 0
 
@@ -9,8 +9,8 @@ article
     @extend $block
     overflow: hidden
     background: white
-    border-radius: 4px
-    border: 1px solid #BBB
+    // border-radius: 4px
+    //border: 0.7px solid color-border
 
 .article-banner
     width:100%
@@ -18,15 +18,19 @@ article
 
 .article-header
     padding: 0 article-padding 0
+    @media mq-mobile
+        padding: 0 30px
+    @media mq-mini
+        padding: 0 20px
     .article-title
         display: block
         margin-bottom: 14px
-
 .article-title
     font-size: 2em
     color: color-default
     text-decoration: none
     line-height: line-height-title
+    font-weight: 600;
     a&:visited
         color: color-default
     a&:hover
@@ -50,6 +54,7 @@ article
         color: color-default
         &:hover
             color: color-link
+
 div.article-meta-button
     float: right
     margin-right: 0
@@ -65,17 +70,18 @@ div.article-meta-button
             background: #333
             
 .article-inner .article-meta
-        line-height: 20px
+        line-height: 30px // 20px
+        font-size: 14px
         background: color-meta-head
-        margin: 0px -21px 20px -21px
-        padding: 0 20px;
-        line-height: 30px
+        margin: 0px -41px 50px -41px //0px -21px 20px -21px
+        padding: 0 40px; //20px
+        line-height: 40px //30px
         border: 1px solid #666
         border-radius: 4px 4px 0 0
         color: #fff
         a
             color: #fff 
-            
+
 .article-category
     .fa-angle-right
         margin: 0 5px
@@ -83,19 +89,23 @@ div.article-meta-button
 .article-tag
     .tag-link
         &:before
-            content: "#"
+            content: "" //初期設定"#"
 
 .article-entry
     @extend $base-style
     clearfix()
     color: color-default
     padding: 0 article-padding
+    @media mq-mobile
+        padding: 0 30px
+    @media mq-mini
+        padding: 0 20px
     line-height: line-height
     p, table
         line-height: line-height
         margin: line-height 0
     h1, h2, h3, h4, h5, h6
-        font-weight: bold
+        font-weight: 500;
         line-height: line-height-title
         margin: line-height-title 0
         display: table
@@ -122,7 +132,7 @@ div.article-meta-button
             margin-left: 0
             list-style: none
     img, video
-        max-width: 100%
+        max-width: 80%
         height: auto
         display: block
         margin: auto
@@ -142,10 +152,10 @@ div.article-meta-button
     blockquote
         position: static
         font-family: font-serif
-        font-size: 1.1em
-        margin: 0 -20px
-        padding: 10px 20px 10px 54px
-        background: #fcfcfc
+        font-size: 1em
+        margin: 0 10px
+        padding: 10px 22px 10px 52px
+        background: #f7f7f7
         border-left: 4px solid #eee
         &:before
             top: 20px
@@ -196,16 +206,19 @@ div.article-meta-button
             height: 100%
             margin-top: 0
 
-div .article-more-link
-    padding: 0 0 20px 20px
-
+div .article-more-link //もっと読むのボタンの位置を調整
+        padding: 0 0 20px 40px
+        @media mq-mobile
+            padding: 0 0 20px 30px
+        @media mq-mini
+            padding: 0 0 20px 20px
 .article-more-link a
     display: inline-block
     line-height: 1em
     padding: 6px 15px
     border-radius: 15px
     background: color-background
-    color: color-grey
+    color: color-meta-head //color-grey
     text-shadow: 0 1px #fff
     text-decoration: none
     &:hover
@@ -217,8 +230,9 @@ div .article-more-link
 .article-footer
     clearfix()
     font-size: 0.85em
+    float: right
     line-height: line-height
-    border-top: 1px solid color-border
+    //border-top: 1px solid color-border
     padding-top: line-height
     margin: 0 article-padding article-padding
     a
@@ -253,7 +267,11 @@ div .article-more-link
             absolute-center(8px)
             content: ""
             border-radius: 50%
-            background: color-default + #222
+            background: #fff //color-default + #222
+    @media mq-mobile
+        padding: 0 10px
+    @media mq-mini
+        padding: 0 20px
 
 .article-nav-link-wrap
     text-decoration: none
@@ -290,7 +308,7 @@ div .article-more-link
         margin-right: -2px
 
 .article-nav-title
-    font-size: 0.85em
+    font-size: 0.95em
     margin-top: 0.5em
     color: color-default
     line-height: line-height
@@ -403,9 +421,9 @@ $article-share-link
 /* topic section */
 .toc-article
     background #F9F9F9
-    margin 2em 0 0 0.2em
-    padding 1em
-    border: 1px solid #000
+    margin 2.0em 0em 1.6em 0em //2em 1.6em 1.6em 1.6em
+    padding 1.6em
+    border: 1px solid #dfe1e2 //#000
     border-radius 0px
     .toc-title
         font-size 120%
@@ -418,8 +436,8 @@ ol.toc
 
 #toc
     line-height 1em
-    font-size 0.8em
-    float right
+    font-size 1.0em //0.9em
+    float inherit  // right
     .toc
         padding 0
         li
@@ -455,3 +473,40 @@ ol.toc
 .lg-outer
     .lg-thumb-item
         border-radius: 0 !important
+
+/* シェアボタン */
+.share_link 
+    display: flex;
+    margin-bottom: 30px;
+
+.share_link a 
+    transition: ease-in-out .2s;
+    padding: 20px;
+    flex-grow: 1;
+    text-align: center;
+
+.share_link a:hover 
+    transform: scale(1.05);
+    box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.15);
+    transition: ease-in-out .2s;
+    background-color: #fff;
+
+.twitter_share_link
+    padding: 15px;
+    color: #fff;
+
+.twitter_share_link_meta
+    padding: 15px;
+    color: #fff;
+    align: right
+
+
+.twitter_share_link:hover 
+    color: #00B0ED;
+
+.facebook_share_link 
+    padding: 15px;
+    color: #fff;
+
+.facebook_share_link:hover
+    color: #3B5998;

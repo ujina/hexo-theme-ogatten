@@ -38,12 +38,20 @@ code
 
 .outer
     clearfix()
-    max-width: (column-width + gutter-width) * columns * 2
+    max-width: 1200px;  //(column-width + gutter-width) * columns * 2 
     margin: 0 auto
     padding: 0 gutter-width
+    
+    @media mq-mobile
+        padding: 0
+        display: flex;
+        flex-direction: colum;
+    
     @media mq-mini
         padding: 0
-
+        display: flex;          
+	    flex-direction: column;
+   
 .left, .alignleft
     float: left
 
@@ -64,24 +72,51 @@ code
     position: relative
     & > .outer
         margin-bottom: 30px
-
+    
 #main
-    @media mq-normal
-        column(main-column)
+    @media mq-normal        
+        if sidebar 
+            column(main-column-tablet)
+        else
+            width: 100%  
+        float: left;
     @media mq-tablet
         if sidebar
             column(main-column-tablet)
-        else
-            width: 100%
+         else
+            width: 100% 
+        float: left;
     @media mq-mobile
         width: 100%
     @media mq-mini
         width: 100%
 
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+
+
+#sidebar    
+    @media mq-normal
+        order: 2;
+    @media mq-tablet
+        order: 2;
+    @media mq-mobile 
+        order: 1;
+    @media mq-mini
+        order: 1;  
+
 @import "_extend"
 @import "_partial/header"
 @import "_partial/profile"
 @import "_partial/article"
+
+.article
+    @media mq-mobile
+        padding: 0 20px
+
 @import "_partial/comment"
 @import "_partial/archive"
 @import "_partial/timeline"

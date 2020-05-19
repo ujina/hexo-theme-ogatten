@@ -6,10 +6,13 @@
             <% if (theme.customize.profile.enabled) { %>
                 <%- partial('common/profile', null, {cache: !config.relative_link}) %>
             <% } %>
+
+            <section id="main"><%- body %></section>
+           
             <% if (theme.customize.sidebar) { %>
                 <%- partial('common/sidebar') %>
             <% } %>
-            <section id="main"><%- body %></section>
+
         </div>
         <%- partial('common/footer', null, {cache: !config.relative_link}) %>
         <%- partial('common/scripts') %>

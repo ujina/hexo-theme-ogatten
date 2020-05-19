@@ -5,6 +5,7 @@ index:
     category: 'カテゴリ'
     uncategorized: '未分類'
     tag: 'タグ'
+
 nav:
     next: '次'
     prev: '前'
@@ -20,7 +21,7 @@ widget:
 article:
     comments: 'コメント'
     share: '共有'
-    catalogue: 'カタログ'
+    catalogue: 'もくじ'
 profile:
     follow: 'フォローする'
     post: '投稿'

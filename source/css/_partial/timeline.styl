@@ -16,7 +16,7 @@
         width: 12px
         color: white
         height: 12px
-        border-radius: 50%
+        // border-radius: 50%　丸くする
         margin: 11px 0 0 -8px
         display: inline-block
         background-color: color-link
@@ -33,7 +33,7 @@
             top: 10px
             left: -14px
             border: 7px solid transparent
-            border-right-color: white
+            border-right-color: #f7f7f7 //white
         &:before
             top: 9px
             left: -16px
@@ -41,13 +41,14 @@
             border-right-color: rgba(0, 0, 0, 0.05)
         h1,
         .article-meta
-            padding: 10px
+            padding: 18px
         h1
             font-size: 16px
             a
                 @extend $link-dark
+            background-color: #f7f7f7
         .article-meta
-            font-size: 12px
+            font-size: 14px
             color: color-default + #333
             border-top: 1px solid #f7f7f7
             background-color: rgba(244, 246, 247, 0.2)

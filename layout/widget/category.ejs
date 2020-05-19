@@ -83,6 +83,7 @@
                     <%  
                     });
                 } 
+                
                 if(branch.articles && branch.articles.length) {
                     branch.articles.sort(function(post0, post1) {
                         return new Date(post0.date) - new Date(post1.date)
@@ -90,6 +91,7 @@
                         %> <li class="file<%- (is_post() && post._id == page._id) ? ' active' : '' %>"><a href="<%- post.path %>"><%- post.title %></a></li> <%
                     });
                 }
+                
              %> </ul> <%
             }
         %>

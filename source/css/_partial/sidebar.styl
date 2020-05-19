@@ -1,6 +1,6 @@
 #sidebar
     @media mq-normal
-        column(sidebar-column)
+        column(sidebar-column-tablet) //column(sidebar-column)
     @media mq-tablet
         column(sidebar-column-tablet)
 
@@ -41,8 +41,8 @@
 .widget-wrap
     margin: block-margin 0
     background-color: color-background + 20%
-    border: 4px solid color-border-stretch
-    border-radius: 4px
+    border: 1px solid color-border-stretch
+    border-radius: 2px
     padding: 20px
     h3
         line-height: 20px
@@ -51,25 +51,30 @@
         padding: 0 20px
         line-height: 30px
         border: 1px solid #666
-        border-radius: 4px 4px 0 0
+        border-radius: 2px 2px 0 0
         a
             margin-top: 5px
             float: right
         a,
         span
-            border-radius: 4px 4px 0 0
+            border-radius: 2px 2px 0 0
             background: color-background + 20%
             font-size: 15px
             line-height: 18px
-            padding: 5px 10px
+            padding: 4px 8px
             vertical-align:bottom
             i
                 font-size: 20px
                 vertical-align:bottom
 
+.widget-wrap
+.adsense
+    padding: auto;
+
 .widget-title
     @extend $block-caption
     margin-bottom: 0
+   
 
 .widget
     padding: 15px 5px
@@ -144,7 +149,7 @@
         padding: 10px 0 10px 94px
     &.no-thumbnail
         li
-            padding: 10px 0px
+            padding: 6px 0px //10px 0px
     li
         .item-thumbnail
             opacity: 1
@@ -171,7 +176,7 @@
         .item-inner
             a
             .item-category
-                font-size: 13px
+                font-size: 15px //13px
                 text-transform: uppercase
                 a
                     color: color-link
@@ -196,7 +201,7 @@
                 
 #categories
     text-shadow: 0 1px 0 #FFFFFF
-    font-size: 13px
+    font-size: 14px
     ul
         margin-bottom: 0
         li:last-child
